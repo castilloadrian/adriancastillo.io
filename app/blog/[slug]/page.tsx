@@ -6,9 +6,9 @@ import Navbar from '../../../components/Navbar';
 import BlogPost from '../../../components/BlogPost';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 interface Frontmatter {
@@ -17,10 +17,12 @@ interface Frontmatter {
   [key: string]: any;
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogPostPage({ params }: PageProps) {
-  const { slug } = await Promise.resolve(params);
+  const resolvedParams = await params;
   const postsDirectory = path.join(process.cwd(), 'posts');
-  const filePath = path.join(postsDirectory, `${slug}.mdx`);
+  const filePath = path.join(postsDirectory, `${resolvedParams.slug}.mdx`);
   const source = readFileSync(filePath, 'utf8');
   
   const { data: frontmatter, content } = matter(source);
@@ -42,9 +44,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await Promise.resolve(params);
+  const resolvedParams = await params;
   const postsDirectory = path.join(process.cwd(), 'posts');
-  const filePath = path.join(postsDirectory, `${slug}.mdx`);
+  const filePath = path.join(postsDirectory, `${resolvedParams.slug}.mdx`);
   const source = readFileSync(filePath, 'utf8');
   const { data: frontmatter } = matter(source);
 

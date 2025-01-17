@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import MdxRenderer from './MdxRenderer';
 
 interface Frontmatter {
   title?: string;
@@ -29,9 +30,7 @@ export default function BlogPost({ source, frontMatter }: BlogPostProps) {
         </h2>
       </div>
       <div className="space-y-4">
-        <div className="prose dark:prose-invert text-lg leading-relaxed">
-          <MDXRemote {...source} />
-        </div>
+        <MdxRenderer source={source} />
         <span className="text-sm text-muted-foreground">
           {frontMatter?.date || 'No date'}
         </span>
