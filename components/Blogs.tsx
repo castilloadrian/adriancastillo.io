@@ -39,10 +39,10 @@ export default async function Blogs() {
             <Link 
               href={post.href}
               className="text-lg hover:underline underline-offset-4"
+              prefetch={true}
             >
               {post.title}
             </Link>
-            <span className="text-sm text-muted-foreground">{post.date}</span>
           </article>
         ))}
       </div>

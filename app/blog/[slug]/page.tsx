@@ -6,30 +6,21 @@ import Navbar from '../../../components/Navbar';
 import BlogPost from '../../../components/BlogPost';
 
 interface PageProps {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
-
-interface Frontmatter {
-  title?: string;
-  date?: string;
-  [key: string]: any;
-}
-
-export const dynamic = 'force-dynamic';
 
 export default async function BlogPostPage({ params }: PageProps) {
-  const resolvedParams = await params;
   const postsDirectory = path.join(process.cwd(), 'posts');
-  const filePath = path.join(postsDirectory, `${resolvedParams.slug}.mdx`);
+  const filePath = path.join(postsDirectory, `${params.slug}.mdx`);
   const source = readFileSync(filePath, 'utf8');
   
   const { data: frontmatter, content } = matter(source);
   const mdxSource = await serialize(content, {
     parseFrontmatter: true,
     mdxOptions: {
-      development: process.env.NODE_ENV === 'development'
+      development: false
     }
   });
 
