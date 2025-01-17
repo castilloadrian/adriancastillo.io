@@ -11,24 +11,11 @@ export function ThemeToggle() {
     setMounted(true)
   }, [])
 
-  const toggleTheme = () => {
-    if (theme === 'dark') {
-      setTheme('light')
-    } else if (theme === 'light') {
-      setTheme('dark')
-    } else {
-      // If theme is 'system' or undefined, default to dark
-      setTheme('dark')
-    }
-  }
-
-  if (!mounted) {
-    return null
-  }
+  if (!mounted) return null
 
   return (
     <button
-      onClick={toggleTheme}
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="text-sm hover:underline underline-offset-4"
     >
       {theme === 'dark' ? 'light mode' : 'dark mode'}
