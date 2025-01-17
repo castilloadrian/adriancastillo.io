@@ -5,7 +5,7 @@ export default function About() {
     <p className="text-lg leading-relaxed">
       hi! i'm adrian, a software engineer based in new york city. currently building 
       personal projects in robotics and AI while scaling distributed systems @h-e-b. passionate about 
-      AI/ML and disrupting traditional paradigms.
+      AI/ML and reimagining technical possibilities.
     </p>
     <p className="text-lg">
       this year, i want to build more things.
