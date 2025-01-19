@@ -31,8 +31,8 @@ npm run dev
 ## Project Structure
 
 ```
-├── app/                # Next.js app directory
-├── components/         # React components
+├── app/               # Next.js app directory
+├── components/        # React components
 ├── lib/               # Utility functions
 └── public/            # Static assets
 ```
