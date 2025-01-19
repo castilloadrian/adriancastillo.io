@@ -16,24 +16,27 @@ interface BlogPostProps {
 
 export default function BlogPost({ source, frontMatter }: BlogPostProps) {
   return (
-    <section className="space-y-8">
-      <div className="space-y-8">
+    <section className="max-w-2xl mx-auto space-y-12">
+      <header className="space-y-8">
         <Link 
           href="/" 
-          className="text-sm hover:underline underline-offset-4"
+          className="text-sm hover:underline underline-offset-4 text-muted-foreground"
         >
           back
         </Link>
-        <h2 className="text-2xl font-medium">
-          {frontMatter?.title || 'Untitled Post'}
-        </h2>
-      </div>
-      <div className="space-y-4">
+        <div className="space-y-4">
+          <h1 className="text-3xl font-semibold tracking-tight">
+            {frontMatter?.title || 'Untitled Post'}
+          </h1>
+          <time className="text-sm text-muted-foreground block">
+            {frontMatter?.date || 'No date'}
+          </time>
+        </div>
+      </header>
+      
+      <article className="prose prose-neutral dark:prose-invert">
         {source}
-        <span className="text-sm text-muted-foreground">
-          {frontMatter?.date || 'No date'}
-        </span>
-      </div>
+      </article>
     </section>
   );
 }
