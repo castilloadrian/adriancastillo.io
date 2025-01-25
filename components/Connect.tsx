@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 const socialLinks = [
+  { platform: "linkedin", href: "https://www.linkedin.com/in/adrian-castillo-bscs/" },
+  { platform: "github", href: "https://github.com/castilloadrian" },
   { platform: "email", href: "mailto:adriancastillo1222@gmail.com" },
   { platform: "x", href: "https://x.com/castilloadrianx" },
-  { platform: "github", href: "https://github.com/castilloadrian" },
 ] as const;
 
 export default function Connect() {
