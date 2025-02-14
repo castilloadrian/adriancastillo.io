@@ -4,7 +4,7 @@ export default function About() {
     <h1 className="text-4xl font-medium">adriancastillo.io</h1>
     <p className="text-lg leading-relaxed">
       hi! i'm adrian, a software engineer based in new york city. currently building 
-      personal projects in robotics and ai while scaling distributed systems @h-e-b. passionate about 
+      personal projects in robotics and ai while scaling distributed systems @hellofresh. passionate about 
       ai/ml and reimagining technical possibilities.
     </p>
     <p className="text-lg">
