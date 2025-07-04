@@ -8,12 +8,12 @@ export default function About() {
         hi! i'm adrian, a software engineer based in new york city. currently building 
         personal projects in robotics and ai while scaling distributed systems @
         <Link 
-          href="https://www.hellofresh.com"
+          href="https://www.etsy.com"
           className="hover:underline underline-offset-4"
           target="_blank"
           rel="noopener noreferrer"
         >
-          hellofresh
+          etsy
         </Link>
         . passionate about ai/ml and reimagining technical possibilities.
       </p>

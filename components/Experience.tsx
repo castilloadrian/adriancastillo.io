@@ -14,10 +14,19 @@ interface CompanyExperience {
 
 const experiences: CompanyExperience[] = [
   {
+    company: "etsy",
+    roles: [
+      {
+        years: "july 2025 - present",
+        role: "software engineer ii"
+      }
+    ]
+  },
+  {
     company: "hellofresh",
     roles: [
       {
-        years: "june 2024 - present",
+        years: "feb 2025 - july 2025",
         role: "software engineer"
       }
     ]
@@ -27,11 +36,11 @@ const experiences: CompanyExperience[] = [
     roles: [
       {
         years: "mar 2022 - feb 2025",
-        role: "software engineer II"
+        role: "software engineer ii"
       },
       {
         years: "sept 2021 - mar 2022",
-        role: "software engineer I"
+        role: "software engineer i"
       },
       {
         years: "june 2021 - july 2021",
