@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ThemeToggle } from "../../components/theme-toggle";
+import { useState, useMemo } from "react";
 
 interface Book {
   name: string;
@@ -12,11 +15,32 @@ interface Book {
 
 const books: Book[] = [
   {
+    name: "The Psychology of Money: Timeless Lessons on Wealth, Greed, and Happiness",
+    author: "Morgan Housel",
+    rating: 5,
+    review: "tbd",
+    date: "2023-10"
+  },
+  {
+    name: "The Technological Republic: Hard Power, Soft Belief, and the Future of the West",
+    author: "Alex Karp and Nicholas W. Zamiska",
+    rating: 3,
+    review: "tbd",
+    date: "2025-09"
+  },
+  {
+    name: "The Coming Wave",
+    author: "Mustafa Suleyman",
+    rating: 4,
+    review: "tbd",
+    date: "2025-1"
+  },
+  {
     name: "Project Hail Mary",
     author: "Andy Weir",
     rating: 5,
     review: "tbd",
-    date: "2024-12"
+    date: "2023-12"
   },
   {
     name: "The Bitcoin Standard",
@@ -30,7 +54,28 @@ const books: Book[] = [
     author: "Frank Herbert",
     rating: 5,
     review: "tbd",
-    date: "2024-10",
+    date: "2025-11",
+  },
+  {
+    name: "The Art of Doing Science and Engineering: Learning to Learn",
+    author: "Richard W. Hamming",
+    rating: 4,
+    review: "tbd",
+    date: "2025-10"
+  },
+  {
+    name: "Numbers Don't Lie",
+    author: "Vaclav Smil",
+    rating: 5,
+    review: "tbd",
+    date: "2024-11"
+  },
+  {
+    name: "Artemis",
+    author: "Andy Weir",
+    rating: 3,
+    review: "tbd",
+    date: "2024-07"
   }
 ];
 
@@ -52,6 +97,25 @@ const StarRating = ({ rating }: { rating: number }) => {
 };
 
 export default function ReadingList() {
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+
+  const sortedBooks = useMemo(() => {
+    return [...books].sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      
+      if (sortOrder === 'newest') {
+        return dateB.getTime() - dateA.getTime(); // Newest first
+      } else {
+        return dateA.getTime() - dateB.getTime(); // Oldest first
+      }
+    });
+  }, [sortOrder]);
+
+  const toggleSort = () => {
+    setSortOrder(prev => prev === 'newest' ? 'oldest' : 'newest');
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <header className="max-w-2xl mx-auto px-4 py-8 flex justify-between items-center">
@@ -64,13 +128,16 @@ export default function ReadingList() {
       <main className="max-w-2xl mx-auto px-4 py-16 space-y-12">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-medium">reading list</h2>
-          <button className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Sort by: Date
+          <button 
+            onClick={toggleSort}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Sort by: {sortOrder === 'newest' ? 'Newest ↓' : 'Oldest ↑'}
           </button>
         </div>
         
         <div className="space-y-6">
-          {books.map((book, index) => (
+          {sortedBooks.map((book, index) => (
             <div key={index} className="flex justify-between items-start gap-4">
               <div className="flex-1 space-y-1">
                 <h3 className="text-lg">{book.name}</h3>
