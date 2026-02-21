@@ -1,4 +1,4 @@
-# adriancastillo.io
+# adriancastillo.sh
 
 My personal website built with Next.js, TypeScript, and Tailwind CSS.
 
@@ -13,7 +13,7 @@ My personal website built with Next.js, TypeScript, and Tailwind CSS.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/castilloadrian/adriancastillo.io.git
+git clone https://github.com/castilloadrian/adriancastillo.sh.git
 ```
 
 2. Install dependencies:

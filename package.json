@@ -1,5 +1,5 @@
 {
-  "name": "adriancastillo.io",
+  "name": "adriancastillo.sh",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -25,9 +25,12 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.1.4",
+    "eslint-config-next": "^15.5.12",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
+  },
+  "overrides": {
+    "minimatch": "^10.2.1"
   }
 }

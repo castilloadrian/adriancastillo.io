@@ -119,7 +119,7 @@ export default function ReadingList() {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <header className="max-w-2xl mx-auto px-4 py-8 flex justify-between items-center">
-        <span className="text-sm">adriancastillo.io</span>
+        <span className="text-sm">adriancastillo.sh</span>
         <ThemeToggle />
         <Link href="/" className="text-sm hover:underline">
           home

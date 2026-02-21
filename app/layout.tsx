@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'adrian castillo',
-  description: 'adriancastillo.io',
+  description: 'adriancastillo.sh',
 }
 
 export default function RootLayout({
