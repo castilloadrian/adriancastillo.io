@@ -3,56 +3,56 @@
 import { useState } from 'react'
 
 interface ExperienceItem {
-  years: string;
-  role: string;
+  years: string
+  role: string
 }
 
 interface CompanyExperience {
-  company: string;
-  roles: ExperienceItem[];
+  company: string
+  roles: ExperienceItem[]
 }
 
 const experiences: CompanyExperience[] = [
   {
-    company: "etsy",
+    company: 'etsy',
     roles: [
       {
-        years: "july 2025 - present",
-        role: "software engineer ii"
-      }
-    ]
+        years: 'july 2025 - present',
+        role: 'software engineer ii',
+      },
+    ],
   },
   {
-    company: "hellofresh",
+    company: 'hellofresh',
     roles: [
       {
-        years: "feb 2025 - july 2025",
-        role: "software engineer"
-      }
-    ]
+        years: 'feb 2025 - july 2025',
+        role: 'software engineer',
+      },
+    ],
   },
   {
-    company: "h-e-b",
+    company: 'h-e-b',
     roles: [
       {
-        years: "mar 2022 - feb 2025",
-        role: "software engineer ii"
+        years: 'mar 2022 - feb 2025',
+        role: 'software engineer ii',
       },
       {
-        years: "sept 2021 - mar 2022",
-        role: "software engineer i"
+        years: 'sept 2021 - mar 2022',
+        role: 'software engineer i',
       },
       {
-        years: "june 2021 - july 2021",
-        role: "software engineer intern"
+        years: 'june 2021 - july 2021',
+        role: 'software engineer intern',
       },
       {
-        years: "june 2020 - july 2020",
-        role: "software engineer intern"
-      }
-    ]
-  }
-];
+        years: 'june 2020 - july 2020',
+        role: 'software engineer intern',
+      },
+    ],
+  },
+]
 
 export default function Experience() {
   const [expandedCompany, setExpandedCompany] = useState<string | null>(null)
@@ -74,14 +74,16 @@ export default function Experience() {
               <span className="text-foreground">{company.company}</span>{' '}
               <span className="text-muted-foreground">software engineer</span>
             </button>
-            
+
             {expandedCompany === company.company && (
               <div className="space-y-3 pl-4 border-l-2 border-muted">
                 {company.roles.map((role, index) => (
                   <div key={index} className="space-y-1">
                     <div className="flex justify-between items-baseline">
                       <span className="text-lg">{role.role}</span>
-                      <span className="text-sm text-muted-foreground">{role.years}</span>
+                      <span className="text-sm text-muted-foreground">
+                        {role.years}
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -91,5 +93,5 @@ export default function Experience() {
         ))}
       </div>
     </section>
-  );
-} 
+  )
+}

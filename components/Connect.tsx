@@ -1,11 +1,14 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 const socialLinks = [
-  { platform: "linkedin", href: "https://www.linkedin.com/in/adrian-castillo-bscs/" },
-  { platform: "github", href: "https://github.com/castilloadrian" },
-  { platform: "email", href: "mailto:adriancastillo1222@gmail.com" },
-  { platform: "x", href: "https://x.com/castilloadrianx" },
-] as const;
+  {
+    platform: 'linkedin',
+    href: 'https://www.linkedin.com/in/adrian-castillo-bscs/',
+  },
+  { platform: 'github', href: 'https://github.com/castilloadrian' },
+  { platform: 'email', href: 'mailto:adriancastillo1222@gmail.com' },
+  { platform: 'x', href: 'https://x.com/castilloadrianx' },
+] as const
 
 export default function Connect() {
   return (
@@ -14,7 +17,7 @@ export default function Connect() {
       <div className="space-y-4">
         {socialLinks.map(({ platform, href }) => (
           <div key={platform}>
-            <Link 
+            <Link
               href={href}
               className="text-lg hover:underline underline-offset-4"
               target="_blank"
@@ -26,5 +29,5 @@ export default function Connect() {
         ))}
       </div>
     </section>
-  );
+  )
 }

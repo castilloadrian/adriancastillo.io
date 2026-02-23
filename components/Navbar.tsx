@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { ThemeToggle } from "./theme-toggle";
+import Link from 'next/link'
+import { ThemeToggle } from './theme-toggle'
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
         reading list
       </Link>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

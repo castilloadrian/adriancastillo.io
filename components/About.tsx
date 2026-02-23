@@ -5,9 +5,10 @@ export default function About() {
     <section className="space-y-8">
       <h1 className="text-4xl font-medium">adriancastillo.sh</h1>
       <p className="text-lg leading-relaxed">
-        hi! i'm adrian, a software engineer based in new york city. currently building 
-        personal projects in robotics and ai while scaling distributed systems @
-        <Link 
+        hi! i&apos;m adrian, a software engineer based in new york city.
+        currently building personal projects in robotics and ai while scaling
+        distributed systems @
+        <Link
           href="https://www.etsy.com"
           className="hover:underline underline-offset-4"
           target="_blank"

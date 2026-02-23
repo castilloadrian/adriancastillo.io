@@ -21,7 +21,7 @@ export function ThemeToggle() {
   // Get the actual current theme, prioritizing resolvedTheme
   // resolvedTheme gives us the actual applied theme (light/dark) even when theme is "system"
   const currentTheme = resolvedTheme || theme || systemTheme || 'light'
-  
+
   const toggleTheme = () => {
     // When toggling, explicitly set to the opposite theme
     // This ensures we bypass any system theme confusion
@@ -41,4 +41,3 @@ export function ThemeToggle() {
     </button>
   )
 }
-
