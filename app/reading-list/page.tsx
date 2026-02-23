@@ -5,12 +5,11 @@ import { ThemeToggle } from '../../components/theme-toggle'
 import { useState, useMemo } from 'react'
 
 interface Book {
-  name: string
-  author: string
-  rating: number
-  review: string
-  date: string
-  status?: string
+  name: string;
+  author: string;
+  rating: number;
+  review: string;
+  date: string;
 }
 
 const books: Book[] = [
@@ -142,9 +141,6 @@ export default function ReadingList() {
               <div className="flex-1 space-y-1">
                 <h3 className="text-lg">{book.name}</h3>
                 <p className="text-sm text-muted-foreground">{book.author}</p>
-                {book.status && (
-                  <p className="text-sm text-muted-foreground">{book.status}</p>
-                )}
                 {book.review !== 'tbd' && (
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {book.review}
